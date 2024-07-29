@@ -1,0 +1,212 @@
+/* custom css file made by JeanDeo */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*css variables*/
+
+:root{
+	--main-clr: ;
+	--black: #1a1b1c;
+	--light-clr: #7a7b7c;
+	--light-bg: #e1f1d1;
+	--white: #fff;
+	
+	--body-font: 'Poppins', 'Ubumtu Mono', sans-serif;
+	--n-fsz: .938rem;
+	--s-fsz: .813rem;
+	--sm-fsz: .75rem;
+}
+
+@media screen and (min-width: 968px){
+	:root{
+		--n-fsz: 1rem;
+		--s-fsz: .938rem;
+		--sm-fsz: .813rem;
+	}
+}
+
+/*initialisation*/
+
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+html{
+	font-size: 100%;
+}
+body{
+	font-family: var(--body-font);
+	font-size: var(--n-fsz);
+	background: var(--light-bg);
+	color: var(--black);
+}
+
+/*layout*/
+
+.container{
+	max-width: 968px;
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+/*accordion section*/
+
+.accordion{
+	display: grid;
+	align-content: center;
+	height: 100vh;
+}
+
+.accordion_container{
+	display: grid;
+	row-gap: .75rem;
+	padding: 2rem 1rem;
+	background: var(--white);
+	border-radius: .25rem;
+	box-shadow: 0 12px 32px rgba(51, 51, 51, .1);
+}
+
+.accordion_title{
+	font-size: var(--s-fsz);
+	color: var(--black);
+	font-weight: 400;
+	margin-top: .15rem;
+	transition: .2s;
+}
+
+.accordion_header{
+	display: flex;
+	column-gap: .5rem;
+	padding: 1.25rem 1.25rem 1.25rem 1rem;
+	cursor: pointer;
+}
+
+.accordion_description{
+	padding: 0 1.25rem 1.25rem 3rem;
+	font-size: var(--sm-fsz);
+}
+
+.accordion_icon{
+	font-size: 1.5rem;
+	height: max-content;
+	color: var(--black);
+	transition: .3;
+}
+
+.accordion_item{
+	box-shadow: 0 2px 6px rgba(38,38,38,.1);
+	background: var(--white);
+	border-radius: .25rem;
+	position: relative;
+	transition: all .25s ease;
+}
+
+.accordion_item::after{
+	content: '';
+	background: var(--main-clr);
+	width: 5px;
+	height: 100%;
+	position: absolute;
+	top: 0; left: 0;
+	border-radius: .25rem 0 0 .25rem;
+}
+
+.accordion_item:nth-child(1){
+	background: #fff7f0;
+}
+
+.accordion_item:nth-child(1)::after{
+	background: #ffc08a;
+}
+
+.accordion_item:nth-child(2){
+	background: #f0f0ff;
+}
+
+.accordion_item:nth-child(2)::after{
+	background: #8a8aff;
+}
+
+.accordion_item:nth-child(3){
+	background: #fff0f3;
+}
+
+.accordion_item:nth-child(3)::after{
+	background: #ff8aa1;
+}
+
+.accordion_item:nth-child(4){
+	background: #f0faff;
+}
+
+.accordion_item:nth-child(4)::after{
+	background: #8ad8df;
+}
+
+.accordion_content{
+	overflow: hidden;
+	height: 0;
+	transition: all .25s ease;
+}
+
+/*rotate icon and add font weight to titles*/
+
+.accordion-open .accordion_icon{
+	transform: rotate(45deg);
+}
+.accordion-open .accordion_title{
+	font-weight: 600;
+}
+
+/*media queries*/
+
+/*for medium devices*/
+
+@media screen and (min-width: 576px){
+	.accordion_container{
+		width: 550px;
+		padding: 2.5rem;
+		justify-self: center;
+		border-radius: .75rem;
+	}
+	.accordion_header{
+		padding: 1.5rem;
+	}
+	.accordion_title{
+		padding-right: 3.5rem;
+	}
+	.accordion_description{
+		padding: 0 4rem 1.25rem 3.5rem;
+	}
+}
+
+/*for large devices*/
+
+@media screen and (min-width: 968px){
+	.container{
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
